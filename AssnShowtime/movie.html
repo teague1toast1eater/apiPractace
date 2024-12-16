@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <title>CS2410 Final Project: Notflix</title>
+    <script src="api.js" defer></script>
+    <script src="engine.js" defer></script>
+    <script src="movie.js" defer></script>
+    <link rel="stylesheet" href="index.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+</head>
+
+<body>
+    <h1>Notflix</h1>
+    <h2>Movie Details</h2>
+    <div class="drawer">
+        <!-- this needs to be able to collapse and expand -->
+        <div class="nav">
+            <button id="back-btn"><span class="material-icons-round">arrow_back</span></button>
+            <button id="menu-btn">
+                <a href="index.html"><span class="material-icons-round">home</span>Home</a>
+            </button>
+            <button id="movie-btn">
+                <a href="movies.html"><span class="material-icons-round">movie</span>Movies</a>
+            </button>
+            <button id="people-btn">
+                <a href="people.html"><span class="material-icons-round">person_search</span>People</a>
+            </button>
+            <button id="tv-btn">
+                <a href="tv.html"><span class="material-icons-round">live_tv</span>TV Shows</a>
+            </button>
+        </div>
+    </div>
+    <div id="movie-div">
+        <div id="general-info">
+            <div id="poster-container"></div>
+            <div id="title-container"></div>
+            <div id="release-container"></div>
+            <div id="summary-container"></div>
+            <div id="runtime-container"></div>
+            <div id="stars-container"></div>
+        </div>
+
+        <div id="person-div"></div>
+
+
+        <div id="button-div">
+        <button class="image-button" id="image-button">Show Image Gallery</button>
+        </div>
+    </div>
+
+    <div id="image-div">
+        <div id="snapshot-container"></div>
+    </div>
+
+    <div class="carousel-slider" id="carousel-slider"></div>
+
+    <div id="credits-container">
+        <span id="cast-banner"></span>
+        <div id="cast-container"></div>
+    </div>
+
+</body>
+
+</html>

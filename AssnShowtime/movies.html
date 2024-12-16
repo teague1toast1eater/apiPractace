@@ -1,0 +1,47 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>CS2410 Final Project: Notflix</title>
+    <script src="api.js" defer></script>
+    <script src="engine.js" defer></script>
+    <script src="movies.js" defer></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+    <h1>Notflix</h1>
+    <div class="drawer">
+        <div class="nav">
+            <button id="back-btn"><span class="material-icons-round">arrow_back</span></button>
+            <button id="menu-btn">
+                <a href="index.html"><span class="material-icons-round">home</span>Home</a>
+            </button>
+            <button id="movie-btn"><span class="material-icons-round">movie</span>Movies</button>
+            <button id="people-btn">
+                <a href="people.html"><span class="material-icons-round">person_search</span>People</a>
+            </button>
+            <button id="tv-btn">
+                <a href="tv.html"><span class="material-icons-round">live_tv</span>TV Shows</a>
+            </button>
+        </div>
+    </div>
+    <h1>Movies</h1>
+    <div id="find-div">
+        <div>
+            Find Movie by ID: <input id="id-text" type="text" />
+        </div>
+        <div id="button-div">
+            <a class="find-button" id="find-button" href="movie.html">Find</a>
+        </div>
+    </div>
+    <div id="movies-div">
+        <div id="movie-container"></div>
+    </div>
+
+    <div id="result-page-nav">
+        <button id="prev-btn"><span class="material-icons-round">arrow_back</span></button>
+        <span id="current-page-num"></span>
+        <button id="next-btn"><span class="material-icons-round">arrow_forward</span></button>
+    </div>
+
+</body>
+</html>

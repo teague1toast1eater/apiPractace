@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <title>CS2410 Final Project: Notflix</title>
+    <script src="api.js" defer></script>
+    <script src="engine.js" defer></script>
+    <script src="series.js" defer></script>
+    <link rel="stylesheet" href="index.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+</head>
+
+<body>
+    <h1>Notflix</h1>
+    <div class="drawer">
+        <div class="nav">
+            <button id="back-btn"><span class="material-icons-round">arrow_back</span></button>
+            <button id="menu-btn">
+                <a href="index.html"><span class="material-icons-round">home</span>Home</a>
+            </button>
+            <button id="movie-btn"><span class="material-icons-round">movie</span>Movies</button>
+            <button id="people-btn">
+                <a href="people.html"><span class="material-icons-round">person_search</span>People</a>
+            </button>
+            <button id="tv-btn">
+                <a href="tv.html"><span class="material-icons-round">live_tv</span>TV Shows</a>
+            </button>
+        </div>
+    </div>
+    <h1>Series Details</h1>
+    <div id="series-div">
+
+        <div id="tv-info">
+            <div id="picture-container"></div>
+            <div id="title-container"></div>
+            <div id="years-running-container"></div>
+            <div id="num-episodes-container"></div>
+            <div id="overview-container"></div>
+            <div id="stars-container"></div>
+        </div>
+
+        <div>
+            Show Series Poster: <input id="url-text" type="text" />
+        </div>
+
+        <div id="tv-container"></div>
+
+        <div id="tv-cast-container"></div>
+
+        <div id="button-div">
+            <button class="image-button" id="image-button">Show Image Gallery</button>
+        </div>
+    </div>
+
+    <div id="image-div"></div>
+</body>
+
+</html>

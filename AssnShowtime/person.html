@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <title>CS2410 Final Project: Notflix</title>
+    <script src="api.js" defer></script>
+    <script src="engine.js" defer></script>
+    <script src="person.js" defer></script>
+    <link rel="stylesheet" href="index.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+</head>
+
+<body>
+    <h1>Person Details</h1>
+    <div class="drawer">
+        <!-- this needs to be able to collapse and expand -->
+        <div class="nav">
+            <button id="back-btn"><span class="material-icons-round">arrow_back</span></button>
+            <button id="menu-btn">
+                <a href="index.html"><span class="material-icons-round">home</span>Home</a>
+            </button>
+            <button id="movie-btn">
+                <a href="movies.html"><span class="material-icons-round">movie</span>Movies</a>
+            </button>
+            <button id="people-btn">
+                <a href="people.html"><span class="material-icons-round">person_search</span>People</a>
+            </button>
+            <button id="tv-btn">
+                <a href="tv.html"><span class="material-icons-round">live_tv</span>TV Shows</a>
+            </button>
+        </div>
+    </div>
+    <div id="person-div">
+        <div id="profile-info">
+            <div id="profile-container"></div>
+            <div id="name-container"></div>
+            <div id="bday-container"></div>
+            <div id="birth-place-container"></div>
+            <div id="death-container"></div>
+            <div id="biography-container"></div>
+        </div>
+
+        <div id="credits-container">
+            <span id="cast-banner"></span>
+            <div id="cast-container"></div>
+        </div>
+
+        <div id="button-div">
+            <button class="image-button" id="image-button">Show Image Gallery</button>
+        </div>
+    </div>
+
+    <div class="carousel-slider" id="carousel-slider"></div>
+
+    <div id="image-div">
+        <div id="snapshot-container"></div>
+    </div>
+
+</body>
+
+</html>

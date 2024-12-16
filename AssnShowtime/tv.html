@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <title>CS2410 Final Project: Notflix</title>
+    <script src="api.js" defer></script>
+    <script src="engine.js" defer></script>
+    <script src="tv.js" defer></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css"/>
+</head>
+
+<body>
+    <h1>Notflix</h1>
+    <div class="drawer">
+        <div class="nav">
+            <button id="back-btn"><span class="material-icons-round">arrow_back</span></button>
+            <button id="menu-btn">
+                <a href="index.html"><span class="material-icons-round">home</span>Home</a>
+            </button>
+            <button id="movie-btn"><span class="material-icons-round">movie</span>Movies</button>
+            <button id="people-btn">
+                <a href="people.html"><span class="material-icons-round">person_search</span>People</a>
+            </button>
+            <button id="tv-btn">
+                <a href="tv.html"><span class="material-icons-round">live_tv</span>TV Shows</a>
+            </button>
+        </div>
+    </div>
+    <h1>Television</h1>
+    <div id="find-div">
+        <div>
+            Find Series by ID: <input id="id-text" type="text" />
+        </div>
+        <div id="button-div">
+            <a class="find-button" id="find-button" href="series.html">Find</a>
+        </div>
+    </div>
+</body>
+
+</html>
