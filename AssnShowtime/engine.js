@@ -40,7 +40,15 @@ function buildPeopleCard(title, pic, ident) {
             </button>`;
 }
 
-
+/**
+ * @param title
+ * @param pic
+ * @param releaseYear
+ * @param rating
+ * @param ident
+ * @returns {string}
+ * creates the elements and information needed for the movie cards
+ */
 function buildMovieCard(title, pic, releaseYear, rating, ident) {
     return `<button class="movie-card" onclick="cardEvent(${ident}, 'movie.html')">
                 <div class="card">
@@ -52,6 +60,15 @@ function buildMovieCard(title, pic, releaseYear, rating, ident) {
             </button>`;
 }
 
+/**
+ * @param title
+ * @param pic
+ * @param releaseYear
+ * @param rating
+ * @param ident
+ * @returns {string}
+ * creates the elements and into needed for the TV cards
+ */
 function buildTVCard(title, pic, releaseYear, rating, ident) {
     return `<button class="tv-card" onclick="cardEvent(${ident}, 'series.html')">
                 <div class="card">
@@ -66,6 +83,7 @@ function buildTVCard(title, pic, releaseYear, rating, ident) {
 /**
  * @param pic
  * @param name
+ * creates a person card that can be inserted to whatever page needed
  */
 function buildPersonCard(pic, name, ident) {
     return `<button class="person-card" onclick="cardEvent(${ident}, 'person.html')">
@@ -76,8 +94,11 @@ function buildPersonCard(pic, name, ident) {
             </button>`;
 }
 
-//////// FROM MOVIE /////////
-// create an html element to display the basic info
+//////// FROM MOVIE.JS /////////
+/**
+ * @param movie
+ * create an html element to display the required info into the movie page
+ */
 function makeFilmCard(movie) {
     document.getElementById("poster-container").innerHTML = `<img src="${imgUrl}w300/${movie.poster_path}" alt="${movie.title} cover image" />`;
     document.getElementById("title-container").innerHTML = `<h3>${movie.title}</h3>`;
@@ -87,6 +108,11 @@ function makeFilmCard(movie) {
     document.getElementById("stars-container").innerHTML = `${movie.vote_average}`;
 }
 
+/**
+ * @param person
+ * @returns {string}
+ * person card, one for each cast member listed in the movies credit api call
+ */
 function makePersonCard(person) {
     // TODO: if a value is null, don't display it
     return `<div id="person-card">
@@ -96,6 +122,10 @@ function makePersonCard(person) {
        </div>`;
 }
 
+/**
+ * @param movie
+ * sends all the pictures from the movies image api call
+ */
 function makeGallary(movie) {
     const container = document.getElementById("snapshot-container");
     const backDropImgs = movie.backdrops;
@@ -104,4 +134,3 @@ function makeGallary(movie) {
         container.innerHTML += `<img src="${imgUrl}w300/${backDropImgs[i].file_path}" alt="" />`;
     }
 }
-//////////////////////

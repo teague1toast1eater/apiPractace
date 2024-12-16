@@ -4,30 +4,27 @@ const tvButton = document.getElementById("tv-button");
 const personButton = document.getElementById("person-button");
 
 // Add the listener to each anchor button
-// these buttons will take user to their respective page
+// these buttons will take the user to their respective page
 searchEventListeners(movieButton);
 searchEventListeners(tvButton);
 searchEventListeners(personButton);
 
-
+// promise object for getting the popular movies
 moviePopular()
     .then(result => {
-        const info = result.results;
+        const info = result.results; // the array of popular movie objects
         console.log("movies");
         console.log(info);
         const container = document.getElementById("movie-container");
-        for (let i = 0; i < info.length; i++) {
-            const title = info[i].title;
+        for (let i = 0; i < info.length; i++) { // creates each movie card
             const pic = imgUrl + "/w500" + info[i].poster_path;
-            const releaseYear = info[i].release_date;
-            const rating = info[i].vote_average;
-            const ident = info[i].id;
-            const card = (buildMovieCard(title, pic, releaseYear, rating, ident));
+            const card = (buildMovieCard(info[i].title, pic, info[i].release_date, info[i].vote_average, info[i].id));
             container.innerHTML += card;
         }
     })
     .catch(error => console.log(error));
 
+// promise object for getting the popular people
 peoplePopular()
     .then(result => {
         const info = result.results;
@@ -35,10 +32,8 @@ peoplePopular()
         console.log(info);
         const container = document.getElementById("people-container");
         for (let i = 0; i < info.length; i++) {
-            const name = info[i].name;
             const pic = imgUrl + "w500" + info[i].profile_path;
-            const ident = info[i].id;
-            container.innerHTML += buildPersonCard(pic, name, ident);
+            container.innerHTML += buildPersonCard(pic, info[i].name, info[i].id);
         }
     })
     .catch(error => console.log(error));
@@ -59,4 +54,3 @@ tvPopular()
         }
     })
     .catch(error => console.log(error));
-
