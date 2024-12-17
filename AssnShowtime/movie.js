@@ -2,11 +2,12 @@
 const queryObj = queryStringToJson(window.location.search);
 const movieId = queryObj.id;
 
+// should i reconfigure this file to use the idInput and slider?
 const idInput = document.getElementById("url-text");
 const findButton = document.getElementById("image-button");
 const slider = document.getElementById("carousel-slider");
 
-// Show the images based on the id
+// Show images based on the id
 findButton.addEventListener("click", () => {
     movieImages(movieId)
         .then(result => {
@@ -14,8 +15,9 @@ findButton.addEventListener("click", () => {
         });
 });
 
-// Make the call to get the info based on the id
+// Make a call to get the credit info based on the id
 const cast = `${movieId}/credits`;
+// get the cast for the selected movie
 movieDetails(cast)
     .then(result => {
         console.log("creds", result);
@@ -26,13 +28,15 @@ movieDetails(cast)
             container.innerHTML += makePersonCard(cast[i]);
         }
     })
+
+// this grabs different info from the call above
 movieDetails(movieId)
     .then(result => {
         makeFilmCard(result);
     })
     .catch(error => console.log(error));
 
-// Make the call to get the info based on the id
+// Make a call to get info based on the id
 movieImages(movieId)
     .then(result => {
         console.log("movie image result");

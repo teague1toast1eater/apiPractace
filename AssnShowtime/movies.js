@@ -1,15 +1,19 @@
-// TODO: document.getElementById("current-page-num").innerText = `${pageNumber} / ${result.total_pages}`
 // Get the query string into a JSON object
 const queryObj = queryStringToJson(window.location.search);
+
+// should i keep this here? or is it just a waste of a line because im not using it?
 const movieName = queryObj.query;
 
 const idInput = document.getElementById("id-text");
 const findButton = document.getElementById("find-button");
 const nextPageBtn = document.getElementById("next-btn");
 const prevPageBtn = document.getElementById("prev-btn");
+
+// initializing the page number and count to work with the way that i have the page changing implemented
 let pageNumber = 1;
 let totalPages = 1;
 
+// checks to see if there is a valid search and if there isn't, display the popular movies instead
 function checkNbuild(result) {
     const container = document.getElementById("movie-container");
     if (result.total_results === 0 || idInput.value === undefined) {
@@ -19,7 +23,6 @@ function checkNbuild(result) {
                 totalPages = result.total_pages;
                 document.getElementById("current-page-num").innerHTML = `${pageNumber} / ${totalPages}`
                 console.log("popular movies", result)
-                console.log("totalPages", totalPages)
                 const info = result.results;
                 for (let i = 0; i < info.length; i++) {
                     const pic = imgUrl + "/w500" + info[i].poster_path;
@@ -42,7 +45,7 @@ function checkNbuild(result) {
         }
     }
 }
-console.log(pageNumber);
+
 // Make the call to get results from the search
 movieSearch(idInput.value)
     .then(result => {
@@ -50,10 +53,11 @@ movieSearch(idInput.value)
     })
     .catch(error => console.log(error));
 
+// display the next page of content based on the search or popular category indicated
 nextPageBtn.addEventListener("click", () => {
     if (pageNumber < totalPages) {
         pageNumber++;
-        console.log("page", pageNumber);
+        console.log("page: ", pageNumber);
         const container = document.getElementById("movie-container");
         container.innerHTML = ``; // resets the field to put in the next set of cards
         movieSearch(idInput.value, pageNumber)
@@ -65,6 +69,7 @@ nextPageBtn.addEventListener("click", () => {
     }
 })
 
+// display the previous page of movies
 prevPageBtn.addEventListener("click", () => {
     if (pageNumber > 1) {
         pageNumber--;
@@ -96,4 +101,3 @@ findButton.addEventListener("click", e => {
             checkNbuild(result);
         })
 });
-

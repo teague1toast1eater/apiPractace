@@ -40,6 +40,7 @@ function checkNbuild(result) {
     }
     console.log("totalPages", totalPages);
 }
+
 // Make the call to get results from the search
 peopleSearch(idInput.value)
     .then(result => {
@@ -92,4 +93,3 @@ findButton.addEventListener("click", e => {
             checkNbuild(result);
         })
 });
-

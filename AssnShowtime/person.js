@@ -5,8 +5,8 @@ const personId = queryObj.id;
 const idInput = document.getElementById("url-text");
 const findButton = document.getElementById("image-button");
 
+// this will send the user to the desired cards page
 function cardEvent(id, href) {
-    // this will send the user to the desired cards page
     window.location.href = `${href}?api_key=${apiKey}&id=${id}`;
 }
 
@@ -40,10 +40,6 @@ function makePersonGallary(person) {
         container.innerHTML += `<img src="${imgUrl}w300/${photos[i].file_path}" alt="" />`
     }
 }
-
-document.getElementById("back-btn").addEventListener("click", () => {
-    window.history.back();
-})
 
 // Show the images based on the id
 findButton.addEventListener("click", e => {
